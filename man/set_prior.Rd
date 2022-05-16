@@ -7,15 +7,25 @@
 set_prior(pred, prior, r0, alpha, sigma)
 }
 \arguments{
-\item{pred}{Predictors to include in the weibull distribution. No covariates except for treatment indicator is included if \code{pred = NULL}. Only propensity score generated using a logistic regression model on all covariates and treatment indicator are included if \code{pred = ps}. All covariates and treatment indicator are included if \code{pred = all}}
+\item{pred}{Predictors to include in the weibull distribution. No covariates except for
+treatment indicator is included if \code{pred = NULL}. Only propensity score generated
+using a logistic regression model on all covariates and treatment indicator are included
+if \code{pred = ps}. All covariates and treatment indicator are included if \code{pred = all}}
 
-\item{prior}{Prior distribution for the precision parameter that controls the degree of borrowing. Half-cauchy distribution if \code{prior = "cauchy"}. No external data is included in the data if \code{prior = "no_ext"}. External control arm is assumed to have the same baseline hazards as internal control arm if \code{prior = "full_ext"}. Other options include "gamma" and "unif"}
+\item{prior}{Prior distribution for the precision parameter that controls the degree of
+borrowing. Half-cauchy distribution if \code{prior = "cauchy"}. No external data is
+included in the data if \code{prior = "no_ext"}. External control arm is assumed to
+have the same baseline hazards as internal control arm if \code{prior = "full_ext"}.
+Other options include "gamma" and "unif"}
 
 \item{r0}{Initial values for the shape of the weibull distribution for time-to-events}
 
-\item{alpha}{Initial values for log of baseline hazard rate for external and internal control arms. Length of \code{alpha} should be 1 if \code{prior = "full_ext"} or \code{prior = "no_ext"}, and equal to 2 otherwise}
+\item{alpha}{Initial values for log of baseline hazard rate for external and internal control
+arms. Length of \code{alpha} should be 1 if \code{prior = "full_ext"} or \code{prior =
+"no_ext"}, and equal to 2 otherwise}
 
-\item{sigma}{Initial values for precision parameter if \code{prior = "cauchy"}. If left \code{NULL}, default value 0.03 is used}
+\item{sigma}{Initial values for precision parameter if \code{prior = "cauchy"}.
+If left \code{NULL}, default value 0.03 is used}
 }
 \value{
 a \code{.priorClass} class containing survival data and prior information

@@ -9,9 +9,11 @@ set_n(ssC, ssE, ssExt)
 \arguments{
 \item{ssC}{Number of observations in the internal control arm. Default is 100}
 
-\item{ssE}{Number of observations in the internal experiment arm. Default is the same number of observations as ssC}
+\item{ssE}{Number of observations in the internal experiment arm. Default is the same number
+of observations as \code{ssC}}
 
-\item{ssExt}{Number of observations in the external control arm. Default is the same number of observations as ssC}
+\item{ssExt}{Number of observations in the external control arm. Default is the same number
+of observations as \code{ssC}}
 }
 \value{
 A \code{matrix} containing external trial indicator and treatment indicator

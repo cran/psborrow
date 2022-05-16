@@ -9,7 +9,8 @@
 \arguments{
 \item{x}{A \code{.covClasss} class with covariate information generated in \code{\link{set_cov}}}
 
-\item{...}{Other \code{.covClasss} classes with covariate information generated in \code{\link{set_cov}}}
+\item{...}{Other \code{.covClasss} classes with covariate information generated in
+\code{\link{set_cov}}}
 }
 \value{
 A vector of \code{.covClasss} classes

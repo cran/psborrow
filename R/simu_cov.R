@@ -37,19 +37,19 @@ simu_cov=function(ssObj, covObj, driftHR, HR, nsim, seed, path){
 
   if (missing(ssObj)) stop("Please provide ssObj.")
   if (missing(covObj)) {
-    message("No covObj is provided.")
+    ps_message("No covObj is provided.")
     covObj = NULL
   }
   if (missing(HR)){
     HR = 1
-    message("HR values (HR) not provided. Default value 1 is used.")
+    ps_message("HR values (HR) not provided. Default value 1 is used.")
   }
   if (missing(driftHR)){
     driftHR = 1
-    message("driftHR values (driftHR) not provided. Default value 1 is used.")
+    ps_message("driftHR values (driftHR) not provided. Default value 1 is used.")
   }
   if (missing(nsim)) {
-    message("Number of simulation is not provided. Default value 5 is used")
+    ps_message("Number of simulation is not provided. Default value 5 is used")
     nsim = 5
   }
 
@@ -59,11 +59,11 @@ simu_cov=function(ssObj, covObj, driftHR, HR, nsim, seed, path){
   ssE <- sum(dt0[,'ext'] ==0 & dt0[,'trt'] ==1)
   ssExt <- sum(dt0[,'ext'] ==1)
 
-  message(paste0("The sample size for internal control, internal treatment, and external control arms are ",
+  ps_message(paste0("The sample size for internal control, internal treatment, and external control arms are ",
                  ssC, ", ", ssE, ", and ", ssExt,", respectively."))
 
   if (missing(seed)){
-    message(paste0("Set seed to ",.Random.seed[1]))
+    ps_message(paste0("Set seed to ",.Random.seed[1]))
     seed = .Random.seed[1]
   } else set.seed(seed)
 
@@ -80,7 +80,7 @@ simu_cov=function(ssObj, covObj, driftHR, HR, nsim, seed, path){
       nsim_res <-  lapply(seq(1, nsim, by = 1), function(i){
         seed_i = seed_list[i, j, k]
 
-        message("------------------- #", i, "of ", nsim, "simulation: #",
+        ps_message("------------------- #", i, "of ", nsim, "simulation: #",
                     j, "of HR =", hr, ", #",
                     k, "of driftHR = ", dr, ", seed =", seed_i)
 
@@ -98,9 +98,9 @@ simu_cov=function(ssObj, covObj, driftHR, HR, nsim, seed, path){
   })
 
 
-  if (missing(path)) message("Simulated covariates are not saved.") else {
+  if (missing(path)) ps_message("Simulated covariates are not saved.") else {
     save(res_list, file = path)
-    message("Simulated covariates are saved as ", path)
+    ps_message("Simulated covariates are saved as ", path)
   }
   res_list
 }

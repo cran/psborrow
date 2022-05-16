@@ -4,7 +4,17 @@
 \alias{run_mcmc_p}
 \title{Run MCMC for multiple scenarios with provided data with parallel processing}
 \usage{
-run_mcmc_p(dt, priorObj, n.chains, n.adapt, n.burn, n.iter, seed, path)
+run_mcmc_p(
+  dt,
+  priorObj,
+  n.chains,
+  n.adapt,
+  n.burn,
+  n.iter,
+  seed,
+  path,
+  n.cores = 2
+)
 }
 \arguments{
 \item{dt}{a list of \code{matrix} containing simulated time-to-events information}
@@ -22,6 +32,8 @@ run_mcmc_p(dt, priorObj, n.chains, n.adapt, n.burn, n.iter, seed, path)
 \item{seed}{the seed of random number generator. Default is the first element of .Random.seed}
 
 \item{path}{file name for saving the output including folder path}
+
+\item{n.cores}{number of processes to parallelize over (default = 2)}
 }
 \value{
 a \code{data.frame} containing summary statistics of the posterior distribution for each simulation

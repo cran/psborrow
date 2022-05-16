@@ -2,23 +2,23 @@
 % Please edit documentation in R/get_summary.R
 \name{plot_hr}
 \alias{plot_hr}
-\title{Plot posterior hazard ratio between treatment and control}
+\title{Plot mean posterior hazard ratio between treatment and control}
 \usage{
 plot_hr(dt, HR = 0.67, driftHR = 1, pred = "none")
 }
 \arguments{
-\item{dt}{a \code{data.frame} containing summary statistics for the posterior samples from each simulation generated with \code{\link{get_summary}}}
+\item{dt}{a \code{data.frame} containing summary statistics for the posterior samples from each simulation generated with \code{get_summary}.}
 
-\item{HR}{pre-specified HR between treatment and control arm in the internal trial}
+\item{HR}{pre-specified HR between treatment and control arm in the internal trial for which the mean posterior hazard ratio should be plotted. Must be within \code{unique(dt$HR)}.}
 
-\item{driftHR}{pre-specified HR between external control arm and internal control arm}
+\item{driftHR}{pre-specified HR between external control arm and internal control arm for which the mean posterior hazard ratio should be plotted. Must be within \code{unique(dt$driftHR)}.}
 
-\item{pred}{predictors to use when fitting exponential distribution in MCMC}
+\item{pred}{predictors to use when fitting exponential distribution in MCMC for which the mean posterior hazard ratio should be plotted. Must be within \code{unique(dt$pred)}.}
 }
 \value{
-a \code{ggplot} which is a point plot containing posterior hazard ratio between treatment and control arms corresponding to each prior
+a plot of class \code{ggplot} containing the mean posterior hazard ratio for each prior distribution.
 }
 \description{
-Plot posterior hazard ratio between treatment and control
+Plot mean posterior hazard ratio between treatment and control
 }
 \keyword{method}

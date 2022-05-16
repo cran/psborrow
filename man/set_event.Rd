@@ -7,19 +7,30 @@
 set_event(event, lambdaC, beta, shape, t_itv, change, keep)
 }
 \arguments{
-\item{event}{Distribution of time-to-events: \code{event = "pwexp"} for piece-wise exponential distribution. \code{event = "weibull"} for weibull distribution}
+\item{event}{Distribution of time-to-events: \code{event = "pwexp"} for piece-wise exponential
+distribution. \code{event = "weibull"} for Weibull distribution}
 
-\item{lambdaC}{Baseline hazard rate of internal control arm. Specify a vector for piece-wise hazard with duration specified in \code{t_itv} if \code{event = "pwexp"}}
+\item{lambdaC}{Baseline hazard rate of internal control arm. Specify a vector for piece-wise
+hazard with duration specified in \code{t_itv} if \code{event = "pwexp"}}
 
-\item{beta}{covariates' coefficients. \code{NULL} if no covariates are found in \code{ssObj}}
+\item{beta}{covariates' coefficients (i.e. log hazard ratios). Must be equal in length to the number of covariates
+created by \code{\link[=simu_cov]{simu_cov()}} (or less if restricted by \code{keep}) plus the number of covariates
+defined by \code{change}.}
 
-\item{shape}{shape of weibull distribution if \code{event = "weibull"}. \code{NULL} if \code{event = "pwexp"}}
+\item{shape}{the shape parameter of Weibull distribution if \code{event = "weibull"}. \code{NULL} if
+\code{event = "pwexp"}}
 
-\item{t_itv}{a vector indicating interval lengths where the exponential rates provided in \code{lambdaC} apply. Note that the length of \code{t_itv} is at least 1 less than that of \code{lambdaC} and that the final value rate in \code{lambdaC} applies after time \code{sum(t_itv)}. \code{NULL} if \code{event = "weibull"}}
+\item{t_itv}{a vector indicating interval lengths where the exponential rates provided in
+\code{lambdaC} apply. Note that the length of \code{t_itv} is at least 1 less than that of
+\code{lambdaC} and that the final value rate in \code{lambdaC} applies after time \code{sum(t_itv)}.
+\code{NULL} if \code{event = "weibull"}}
 
-\item{change}{operations applied to covariates for simulating time-to-events}
+\item{change}{A list of additional derivered covariates
+to be used in simulating time-to-events. See details}
 
-\item{keep}{original covariates to keep when simulate time-to-events}
+\item{keep}{A character vector specifying which of the original covariates (i.e. those not
+derived via the \code{change} argument) should be included into the model to simulate time-to-events.
+If left unspecified all covariates will be included.}
 }
 \value{
 a \code{.eventClass} class containing time-to-events information
@@ -27,10 +38,37 @@ a \code{.eventClass} class containing time-to-events information
 a \code{matrix} containing simulated time-to-events information
 }
 \description{
-Set up time-to-events
+Defines the model formula and distribution to be used when simulating time-to-events. Please
+see the user-guide for the model formulations
+}
+\details{
+The \code{change} argument is used to specify additional derived covariates to be used when
+simulating time-to-events. For example, let’s say have 3 covariates \code{cov1}, \code{cov2} & \code{cov3}
+but that we also wish to include a new covariate that is an interaction
+between \code{cov1} and \code{cov2} as well as another covariate that is equal to the sum of
+\code{cov2} and \code{cov3}; we could implement this as follows:\preformatted{set_event(
+    event = "weibull",
+    shape = 0.9,
+    lambdaC = 0.0135,
+    beta = c(5, 3, 1, 7, 9),
+    change = list(
+        c("cov1", "*", "cov2"),
+        c("cov2", "+", "cov3")
+    )
+)
+}
+
+Note that in the above example 5 values have been specified to beta,
+3 for the original three covariates
+and 2 for the two additional derived covariates included via \code{change}.
+
+Variables derived via \code{change} are automatically included in the model regardless
+of whether they are listed in \code{keep} or not. Likewise, these covariates are derived
+separately and not via a standard R formula, that is to say including an interaction
+term does not automatically include the individual fixed effects.
 }
 \examples{
-# time-to-event follows a weibull distribution
+# time-to-event follows a Weibull distribution
 set_event(event = "weibull", shape = 0.9, lambdaC = 0.0135)
 
 # time-to-event follows a piece-wise exponential distribution

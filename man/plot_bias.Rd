@@ -7,18 +7,18 @@
 plot_bias(dt, HR = 1, driftHR = 1, pred = "none")
 }
 \arguments{
-\item{dt}{a \code{data.frame} containing summary statistics for the posterior samples from each simulation generated with \code{\link{get_summary}}}
+\item{dt}{a \code{data.frame} containing summary statistics for the posterior samples from each simulation generated with \code{get_summary}.}
 
-\item{HR}{pre-specified HR between treatment and control arm in the internal trial}
+\item{HR}{pre-specified HR between treatment and control arm in the internal trial for which the bias should be plotted. Must be within \code{unique(dt$HR)}.}
 
-\item{driftHR}{pre-specified HR between external control arm and internal control arm}
+\item{driftHR}{pre-specified HR between external control arm and internal control arm for which the bias should be plotted. Must be within \code{unique(dt$driftHR)}.}
 
-\item{pred}{predictors to use when fitting exponential distribution in MCMC}
+\item{pred}{predictors to use when fitting exponential distribution in MCMC for which the bias should be plotted. Must be within \code{unique(dt$pred)}.}
 }
 \value{
-a \code{ggplot} which is a bar plot containing bias implications corresponding to each prior, the pre-specified HR between internal treatment and control arms is 1
+a bar plot of class \code{ggplot} containing the bias for each prior distribution.
 }
 \description{
-Plot bias
+Plot bias for each prior distribution according to selected simulation parameters
 }
 \keyword{method}

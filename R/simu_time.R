@@ -39,7 +39,7 @@ simu_time = function(dt, eventObj, clinInt, clinExt, seed, path){
   if (missing(clinInt)) stop("Please provide clinInt.")
   if (missing(clinExt)) stop("Please provide clinExt.")
   if (missing(seed)){
-    message("Simulating survival time... Set seed to ",.Random.seed[1])
+    ps_message("Simulating survival time... Set seed to ",.Random.seed[1])
     seed = .Random.seed[1]
   } else set.seed(seed)
 
@@ -51,9 +51,9 @@ simu_time = function(dt, eventObj, clinInt, clinExt, seed, path){
     add_time(dt = dt[[i]], eventObj = eventObj, clinInt = clinInt, clinExt = clinExt, seed = seed_i)
   }) #loop foreach
 
-  if (missing(path)) message("Simulated time are not saved.") else {
+  if (missing(path)) ps_message("Simulated time are not saved.") else {
     save(res_list, file = path)
-    message("Simulated time are saved as", path)
+    ps_message("Simulated time are saved as", path)
   }
   res_list
 }
