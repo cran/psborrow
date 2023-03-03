@@ -1,8 +1,9 @@
 Package: psborrow
 Title: Bayesian Dynamic Borrowing with Propensity Score
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: c(
-    person(given = "Craig", family = "Gower-Page", role = c("cre"), email = "craig.gower-page@roche.com"),
+    person(given = "Isaac", family = "Gravestock", role = c("cre", "ctb"), email = "isaac.gravestock@roche.com"),
+    person(given = "Craig", family = "Gower-Page", role = c("aut"), email = "craig.gower-page@roche.com"),
     person(given = "Matt", family = "Secrest", role = c("ctb"), email = "secrestm@gene.com"),
     person(given = "Yichen", family = "Lu", role = c("aut")),
     person(given = "Aijing", family = "Lin", role = c("aut")),
@@ -24,12 +25,13 @@ Depends: R (>= 3.5.0)
 Config/testthat/edition: 3
 License: Apache License (>= 2)
 NeedsCompilation: no
-Packaged: 2022-05-16 14:36:10 UTC; gowerc
-Author: Craig Gower-Page [cre],
+Packaged: 2023-03-02 08:22:14 UTC; gravesti
+Author: Isaac Gravestock [cre, ctb],
+  Craig Gower-Page [aut],
   Matt Secrest [ctb],
   Yichen Lu [aut],
   Aijing Lin [aut],
   F. Hoffmann-La Roche AG [cph, fnd]
-Maintainer: Craig Gower-Page <craig.gower-page@roche.com>
+Maintainer: Isaac Gravestock <isaac.gravestock@roche.com>
 Repository: CRAN
-Date/Publication: 2022-05-16 17:40:02 UTC
+Date/Publication: 2023-03-03 10:30:07 UTC

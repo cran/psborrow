@@ -53,7 +53,7 @@
 #' control arm. This can be
 #' be thought of as the ratio of the scale parameter between the baseline trial distribution and
 #' the baseline
-#' external control distribution. This is equivalent to `exp(alpha[1] - alpha[2])`
+#' external control distribution. This is equivalent to `exp(alpha[2] - alpha[1])`
 #'
 #' - **`HR_trt_cc`** - The hazard ratio between the treatment arm and the concurrent control arm.
 #' This is equivalent

@@ -1,7 +1,8 @@
-# psborrow (development version)
+# psborrow 0.2.1
 
-* No outstanding updates
-
+* psborrow package is now deprecated. All future development will occur in 
+[psborrow2](https://github.com/Genentech/psborrow2).
+* Fixed calculation of drift HR in analysis to match simulation
 
 # psborrow 0.2.0
 

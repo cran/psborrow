@@ -226,9 +226,9 @@ head(extract_samples(postsamp))
 
 For reference the returned parameters are:
 
-- `HR_cc_hc` - The hazard ratio between the concurrent control arm and the historical control arm.
-This can be be thought of as the ratio of the scale parameter between the baseline trial
-distribution and the baseline external control distribution. This is equivalent to `exp(alpha[1] - alpha[2])`
+- `HR_cc_hc` - The hazard ratio between the historical control arm and the concurrent control arm.
+This can be be thought of as the ratio of the scale parameter between the baseline external control distribution and the
+baseline trial distribution. This is equivalent to `exp(alpha[2] - alpha[1])`
 
 - `HR_trt_cc` - The hazard ratio between the treatment arm and the concurrent control arm.
 This is equivalent to `exp(beta_trt)`
