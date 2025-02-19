@@ -94,7 +94,7 @@ apply_mcmc <- function(dt, formula_cov, ...) {
     }
 
     keep_columns <- colnames(design_mat)[!grepl("\\(Intercept\\)", colnames(design_mat))]
-    design_mat <- design_mat[, keep_columns]
+    design_mat <- design_mat[, keep_columns, drop = FALSE]
 
     colnames(design_mat) <- paste0("cov", seq_len(ncol(design_mat)))
 

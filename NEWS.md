@@ -1,3 +1,7 @@
+# psborrow 0.2.2
+
+* Fixed bug in apply_mcmc in subsetting a data frame when only one covariate is included
+
 # psborrow 0.2.1
 
 * psborrow package is now deprecated. All future development will occur in 
