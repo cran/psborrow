@@ -1,6 +1,6 @@
-2d047f5b093d6d5ad26cb14ea7af421f *DESCRIPTION
+478a9fb6816640e900afb446e75fb63b *DESCRIPTION
 76cb650b9cf4b6d8e00af680e39eef07 *NAMESPACE
-71824f5e1d72ea8653a9ba6bb8b19eb2 *NEWS.md
+a77560c12e785d457ee79a1a9644d423 *NEWS.md
 1734baa9ff269129a3461cf3ab273e99 *R/add_cov.R
 bba35f07b9e1d0b75455231d2007aed3 *R/add_mcmc.R
 dd6beed482bb89494e6ea4afe24e8433 *R/add_time.R
@@ -12,7 +12,7 @@ b07f33930c897b3bc17faafd8e4e0e29 *R/run_mcmc.R
 f8a1fe3ab0fbe0966a3f02ca9f37bf43 *R/simu_time.R
 b34c8e7cd87176e65096bcb8c7b03eb8 *R/utils.R
 89c93d89bc20c6fb7050ccc5fa7b8da1 *R/zzz.R
-0ba5b1f47ac28302c4649f78de0d99f3 *build/vignette.rds
+5290d930216c1296b935218de931b9e7 *build/vignette.rds
 2d14f124bdf7262da9043fb1d99c4c5e *inst/doc/analysis.html
 6ca372fad8c03ff6d94f6d96f9bac858 *inst/doc/analysis.html.asis
 9c1ef0abd8c2784167890e592cd8b945 *inst/doc/user_guide.html
@@ -59,7 +59,7 @@ a022744be2e9eb4c6160d606af5303e9 *man/set_event.Rd
 81eb075f8f3a833c8330ff3aec21e9af *tests/testthat/test-inputs.R
 b8c44dba4c18a0d3144697407110e0a9 *tests/testthat/test-messages.R
 aff134a9713d51bb0b0d0884a343fc51 *tests/testthat/test-parallel.R
-e7ea2d5a689d2678d47c3712678f19d4 *tests/testthat/test-plots.R
+37025babe301700e82970408daa20b52 *tests/testthat/test-plots.R
 a5f014e286002ee26c6b06db788bd837 *tests/testthat/test-quiet.R
 b022a6aa14b51ccb64a2097488af61e3 *tests/testthat/test-run_mcmc.R
 70b56f25b0511f2f846d6d703f7e0c02 *vignettes/Analysis.Rmd
