@@ -12,6 +12,8 @@ ps_message(...)
 \description{
 Simple wrapper function around \code{\link[=message]{message()}} that will supress
 printing messages if the option \code{psborrow.quiet} is set to \code{TRUE}
-i.e.\preformatted{options("psborrow.quiet" = TRUE)
-}
+i.e.
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{options("psborrow.quiet" = TRUE)
+}\if{html}{\out{</div>}}
 }

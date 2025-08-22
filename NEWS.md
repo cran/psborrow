@@ -1,3 +1,7 @@
+## psborrow 0.2.4
+
+* Change deprecated arguments in ggplot2 calls.
+
 ## psborrow 0.2.3
 
 * Use `ggplot2::get_labs()` in tests due to change in functionality in that package.

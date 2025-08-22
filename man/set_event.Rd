@@ -46,7 +46,9 @@ The \code{change} argument is used to specify additional derived covariates to b
 simulating time-to-events. For example, let’s say have 3 covariates \code{cov1}, \code{cov2} & \code{cov3}
 but that we also wish to include a new covariate that is an interaction
 between \code{cov1} and \code{cov2} as well as another covariate that is equal to the sum of
-\code{cov2} and \code{cov3}; we could implement this as follows:\preformatted{set_event(
+\code{cov2} and \code{cov3}; we could implement this as follows:
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{set_event(
     event = "weibull",
     shape = 0.9,
     lambdaC = 0.0135,
@@ -56,7 +58,7 @@ between \code{cov1} and \code{cov2} as well as another covariate that is equal t
         c("cov2", "+", "cov3")
     )
 )
-}
+}\if{html}{\out{</div>}}
 
 Note that in the above example 5 values have been specified to beta,
 3 for the original three covariates

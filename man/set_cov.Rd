@@ -45,8 +45,10 @@ Categorical variables are created by sampling a continuous variable from the mul
 normal
 distribution (thus respecting the correlation to other covariates specified by \code{cov})
 and then applying a cut point derived from the \code{prob_int} or \code{prob_ext} quantile
-of said distribution i.e. for a univariate variable it would be derived as:\preformatted{binvar <- as.numeric(rnorm(n, mu, sqrt(var)) < qnorm(prob, mu, sqrt(var)))
-}
+of said distribution i.e. for a univariate variable it would be derived as:
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{binvar <- as.numeric(rnorm(n, mu, sqrt(var)) < qnorm(prob, mu, sqrt(var)))
+}\if{html}{\out{</div>}}
 
 Please note that this means that the value of \code{mu_int} & \code{mu_ext} has no impact on categorical
 covariates and thus can be set to any value.

@@ -5,7 +5,7 @@
 thm <-  theme(axis.title.x = element_blank(),
               legend.position = "none",
               panel.grid.major.x = element_blank(),
-              panel.grid.major.y = element_line(size=.1, color="grey"),
+              panel.grid.major.y = element_line(linewidth =.1, color="grey"),
               panel.background = element_rect(fill = "transparent",colour = NA),
               plot.background = element_rect(fill = "transparent",colour = NA),
               text = element_text(size=15))
